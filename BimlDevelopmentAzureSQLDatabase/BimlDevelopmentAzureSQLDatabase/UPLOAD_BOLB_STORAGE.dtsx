@@ -1,0 +1,93 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="2/2/2019 9:30:16 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-U8PAEJC"
+  DTS:CreatorName="DESKTOP-U8PAEJC\RaymondBarley"
+  DTS:DTSID="{B3A8B262-110A-4FD1-B5CF-037FFFC23826}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.0900.40"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="UPLOAD_BOLB_STORAGE"
+  DTS:PackageType="5"
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{8391DAB4-7AC7-4878-87EB-295B27BC7647}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[azure.sql.database]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{20536857-81C2-4EA9-900E-DB1B71544156}"
+      DTS:ObjectName="azure.sql.database">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=payasyougobackoffice.database.windows.net;User ID=cloudadmin;Initial Catalog=staging;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAYbFZkGAXh02/WYfcJ5KuiAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADdZdqAK1D4Z9WwrhIp5MFmOI/XN9bG1tL7vWVrid/kcgAAAAAOgAAAAAIAACAAAACFoxdSBE97M0aXT+1gcfiiibnk4QFrXJtwQcKOopB8xyAAAADkR9HtTW510JMGh3E3/DaBsMMTgka1CP5FiIFZTgxEeUAAAACjlRKvABJ+wSNYhx+esePcpYhKGMlnWqwVU6rBudxd3gKONLQlftT7LzX5Szb1MgZ8jvQQ1+l8IyFtz3MQ/QXw</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[backofficestaging]"
+      DTS:CreationName="AzureStorage"
+      DTS:DTSID="{010489F1-52C6-4AB9-B232-0C07BDC9AF67}"
+      DTS:ObjectName="backofficestaging">
+      <DTS:ObjectData>
+        <AzureStorageConnectionManager
+          ConnectionString="DefaultEndpointsProtocol=https;AccountName=backofficestaging;EndpointSuffix=core.windows.net">
+          <AccountKey
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAYbFZkGAXh02/WYfcJ5KuiAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADB4+XvfxGe/KY6MQdRoA994c5VH5ptEmr1OOw2/y95JgAAAAAOgAAAAAIAACAAAAA0jZeXJMzOWms8o365cLAmzcissX3sJI1SceHjRrX9IcAAAAA6kfhCDdWfcL0pRirS6RWl+aGrktkE3sglC/m+kKp9gOTo8Tw/8O1d39Y1GUQ50Cn7fpPICf17vQ+DXnwfRCaNdEhT9PQgBnrxP8bVLUKuW0ga+SaJYe/w/Do0jbPtAhQ2f6E7OH7jOoUeNBK3q7qR2BlbJ2keyMHlRBc/K84nO+MjAktxhbCsSW+4UULhJxNI86M3B0lYDUzK4xNTCDIESk2qILiWzuf0qzELsi/rrGgVBY/ftn/8ytXHIhlBuA9AAAAAlOUMTHscPJJtfm9oecaSPaXoBWOKiPEvd/XO5MdEkICCaDBdcCMLrCQUSz8PGoJckryO+Hl2kwtTMjLzkRKMpw</AccountKey>
+        </AzureStorageConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Azure Blob Upload Task"
+      DTS:CreationName="CopyToBlobTask"
+      DTS:Description="Azure Blob Upload Task"
+      DTS:DTSID="{21D1F200-D35D-4373-BDAC-72AC249C9B72}"
+      DTS:ExecutableType="CopyToBlobTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Azure Blob Upload Task"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <CopyToBlobTask
+          ConnectionId="{010489F1-52C6-4AB9-B232-0C07BDC9AF67}"
+          BlobContainer="subscriptions"
+          BlobDirectory="new/"
+          LocalDirectory="C:\backofficeframework\subscriptions"
+          FileNameFilter="*"
+          TimeRangeFrom="1/1/1900 12:00:00 AM -05:00"
+          TimeRangeTo="12/31/2200 12:00:00 AM -05:00" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="189.6,41.6"
+          Id="Package\Azure Blob Upload Task"
+          TopLeft="196.00000333786,85.035295310235" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2050
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "BimlProjectParameters", "BimlProjectParameters\BimlProjectParameters.dtproj", "{45D5CFCC-C32A-4AA5-8FA1-E847303859B4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{45D5CFCC-C32A-4AA5-8FA1-E847303859B4}.Development|Default.ActiveCfg = Development
+		{45D5CFCC-C32A-4AA5-8FA1-E847303859B4}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BFCFA9C8-9263-4F7B-AC8A-EB855315D1CC}
+	EndGlobalSection
+EndGlobal
