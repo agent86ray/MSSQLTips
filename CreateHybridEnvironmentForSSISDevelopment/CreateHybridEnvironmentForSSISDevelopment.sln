@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2050
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "CreateHybridEnvironmentForSSISDevelopment", "CreateHybridEnvironmentForSSISDevelopment\CreateHybridEnvironmentForSSISDevelopment.dtproj", "{9E0F8AF5-24DB-4696-9A94-FF066F2A4C48}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9E0F8AF5-24DB-4696-9A94-FF066F2A4C48}.Development|Default.ActiveCfg = Development
+		{9E0F8AF5-24DB-4696-9A94-FF066F2A4C48}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9DB2E703-7F7E-4E2B-B9D9-58CC629821D6}
+	EndGlobalSection
+EndGlobal
