@@ -11,9 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="ImportSourceFiles"
   DTS:PackageType="5"
-  DTS:ProtectionLevel="0"
-  DTS:VersionBuild="8"
-  DTS:VersionGUID="{07154BE0-FCAF-4377-B7F9-770267730AF2}">
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{B7FA4120-6FC7-4B41-89A6-318F95A142CF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -28,7 +27,8 @@
         <AzureStorageConnectionManager
           ConnectionString="DefaultEndpointsProtocol=https;AccountName=;EndpointSuffix=core.windows.net">
           <AccountKey
-            Sensitive="1"></AccountKey>
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAYbFZkGAXh02/WYfcJ5KuiAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAGY5Rupy5X205zIP8Suk2RB+UnJdB/bNVw1TRH4KL9LQAAAAAOgAAAAAIAACAAAAAxOApmeVFXRPB3tWvGiFCqUxdBEJTS1hSCv8pOj6r87yAAAACU3bBlnJwK4nAAQ/uyD5Vi8fvfUZG+E13kN1DETF10tUAAAAB59Y+Sej09NQD9zBSS6DzuXiV642dubV0NEokNdPH5v5eEdTicmeQkaaYXqr+zVRvqKKiMi8BfjH09vrYn+1Le</AccountKey>
         </AzureStorageConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>

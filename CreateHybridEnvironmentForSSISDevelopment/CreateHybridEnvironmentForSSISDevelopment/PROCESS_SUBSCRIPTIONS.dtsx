@@ -11,9 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="PROCESS_SUBSCRIPTIONS"
   DTS:PackageType="5"
-  DTS:ProtectionLevel="0"
-  DTS:VersionBuild="7"
-  DTS:VersionGUID="{390368F6-20D0-4B63-B1BA-803CDAFEA99C}">
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{24C3B50C-BAFF-43A8-897F-4829D1C1BD51}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +28,8 @@
           DTS:ConnectionString="Data Source=payasyougobackoffice.database.windows.net;User ID=cloudadmin;Initial Catalog=staging;Provider=SQLNCLI11.1;Auto Translate=False;">
           <DTS:Password
             DTS:Name="Password"
-            Sensitive="1"></DTS:Password>
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAYbFZkGAXh02/WYfcJ5KuiAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABeALVsLhNTjsJHaeNGpq9uqhVjiPhGFk5BSCKNIhkD7QAAAAAOgAAAAAIAACAAAADOLY42frh4IjXhHW4jUR4Mik02hIlbjR11YnVcXHnUqCAAAACBiHnUYKhtDWnYNmebX+NzF91/zk9GvHw/VgvuWmYPYEAAAACAE4fiLax8S/KziBWG6rD3Vpjm3dQv8anFwWHZ5cuntz3fhJ22rs5PhjPZSMZ15sC826TcPtVrMgF7q3tLH/J/</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
