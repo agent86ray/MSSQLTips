@@ -11,27 +11,40 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="ImportSourceFiles"
   DTS:PackageType="5"
-  DTS:VersionBuild="3"
-  DTS:VersionGUID="{F5BA0966-87B2-4B75-AD79-27B5EF8452D2}">
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{07154BE0-FCAF-4377-B7F9-770267730AF2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[backofficestaging]"
+      DTS:refId="Package.ConnectionManagers[AzureStorage]"
       DTS:CreationName="AzureStorage"
       DTS:DTSID="{8C7A3E35-7846-40C6-A93E-8C081BB6F6DD}"
-      DTS:ObjectName="backofficestaging">
+      DTS:ObjectName="AzureStorage">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[$Project::Staging_ConnectionString]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <AzureStorageConnectionManager
-          ConnectionString="DefaultEndpointsProtocol=https;AccountName=backofficestaging;EndpointSuffix=core.windows.net">
+          ConnectionString="DefaultEndpointsProtocol=https;AccountName=;EndpointSuffix=core.windows.net">
           <AccountKey
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAegUSc1ZL1E+wiY7QQA56pgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABeak8Ec0DeLlfbNHVj+EOFsrJsu8O8hsdDTCVgQgGOoQAAAAAOgAAAAAIAACAAAABGYjOONJ8yiqnzByVk/gDSJ3YXw4nv9wf31L/v8K4TE8AAAACBGEqwX6p4dBv/j15zBhS5zYII+bg2BBMrB6bi6lTe1iHdYrhgGAacMG+bntu/wAumxfkzwmjx4Qi6BNDl0k/8WVp92yyCNGstCVTVLeDNIUL2aBPCOWv3fNxGacIxZpqJLftDiojhb1QEefd0ZHHRTDU+DBw4jZt+35GlFe7RHwl3qIQS5bBntRr6I17YZPa4dWZO/js7lxX9/8EXyzai38ls4P/wDDVXKZDNR5h3IkN+9uNphKyM8SB5d5z2nWlAAAAAIRnMQXfxfw3JrtYFkfHW9BD7rwHniiD5UXDkHM+JhF6IanetUkh8pmTXl/A8k7SG4cJ6an7MCLDjAXzwWvumPw</AccountKey>
+            Sensitive="1"></AccountKey>
         </AzureStorageConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
-  <DTS:Variables />
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{55BD34D8-831C-4F4C-92B7-80AF0DA88A7C}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="BLOB_FILE">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
       DTS:refId="Package\Azure Blob Download Task"
@@ -76,11 +89,15 @@
         DTS:CreationName="ForEachBlobEnumerator"
         DTS:DTSID="{146D7BA8-69C1-4547-B546-07D880AEC25B}"
         DTS:ObjectName="{146D7BA8-69C1-4547-B546-07D880AEC25B}">
+        <DTS:PropertyExpression
+          DTS:Name="BlobContainer">@[$Project::BLOB_CONTAINER_NAME]</DTS:PropertyExpression>
+        <DTS:PropertyExpression
+          DTS:Name="BlobPath">@[$Project::BLOB_PATH]</DTS:PropertyExpression>
         <DTS:ObjectData>
           <FEECloudEnumerator
             Connection="{8C7A3E35-7846-40C6-A93E-8C081BB6F6DD}"
-            Container=""
-            BlobPath=""
+            Container="subscriptions"
+            BlobPath="new/"
             FileNameFilter="*"
             TimeRangeFrom="1/1/1900 12:00:00 AM -05:00"
             TimeRangeTo="12/31/2200 12:00:00 AM -05:00" />
@@ -88,6 +105,14 @@
       </DTS:ForEachEnumerator>
       <DTS:Variables />
       <DTS:Executables />
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{E0A71936-71B8-40A0-A240-A79BE9B15833}"
+          DTS:ObjectName="{E0A71936-71B8-40A0-A240-A79BE9B15833}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::BLOB_FILE" />
+      </DTS:ForEachVariableMappings>
     </DTS:Executable>
   </DTS:Executables>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
@@ -103,20 +128,20 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="204.5,42"
+          Size="204.8,41.6"
           Id="Package\Azure Blob Download Task"
-          TopLeft="73.25,144" />
+          TopLeft="379.535719501729,189.882353584659" />
         <NodeLayout
-          Size="151.5,42"
+          Size="151.2,41.6"
           Id="Package\Data Flow Task"
-          TopLeft="224,54.5" />
+          TopLeft="550.857148423487,86.9235298664925" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="205,56"
-          Size="205,99"
+          PanelSize="204.8,104"
+          Size="204.8,147.2"
           Id="Package\Foreach Loop Container"
-          TopLeft="9.5,17.75" />
+          TopLeft="195.785717458141,34.8794120049394" />
       </GraphLayout>
     </LayoutInfo>
   </Package>

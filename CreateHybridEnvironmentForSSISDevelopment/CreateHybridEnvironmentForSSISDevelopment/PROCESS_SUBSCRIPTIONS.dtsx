@@ -11,8 +11,9 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="PROCESS_SUBSCRIPTIONS"
   DTS:PackageType="5"
-  DTS:VersionBuild="6"
-  DTS:VersionGUID="{0CDCB5DF-61D2-4DB4-A6F3-65B723B0031E}">
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{390368F6-20D0-4B63-B1BA-803CDAFEA99C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -28,8 +29,7 @@
           DTS:ConnectionString="Data Source=payasyougobackoffice.database.windows.net;User ID=cloudadmin;Initial Catalog=staging;Provider=SQLNCLI11.1;Auto Translate=False;">
           <DTS:Password
             DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAegUSc1ZL1E+wiY7QQA56pgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADYbjXzCTRjZmEt2kuZCr8B1dzSRA83t0A9zotolqXTXQAAAAAOgAAAAAIAACAAAACw4w2HJ6F4abzEyog/EkcmxqqaZj+TXBMqWa/5rQ1SGCAAAADOgjEAPZFITMrm9LlukJa5iJx3rkG0zs5DcakdCSWbYUAAAAAlYOzYzeHQd1NV7qsoc3vkzEkp7Ml5B88mtGc2abojCET8BEtBlvE5Ae8j6gAuWhP/n3qykXQT109fphttJyE2</DTS:Password>
+            Sensitive="1"></DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -114,14 +114,14 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="163.5,42"
+          Size="163.2,41.6"
           Id="Package\Iterate thru Subscrition Files\Execute SQL Task"
           TopLeft="35,37.5" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="235.5,136"
-          Size="235.5,179"
+          PanelSize="235.2,136"
+          Size="235.2,179.2"
           Id="Package\Iterate thru Subscrition Files"
           TopLeft="75,55" />
       </GraphLayout>
