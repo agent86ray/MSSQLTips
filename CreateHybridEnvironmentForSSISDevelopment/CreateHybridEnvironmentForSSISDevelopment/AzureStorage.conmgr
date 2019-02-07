@@ -1,0 +1,15 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="AzureStorage"
+  DTS:DTSID="{8C7A3E35-7846-40C6-A93E-8C081BB6F6DD}"
+  DTS:CreationName="AzureStorage">
+  <DTS:PropertyExpression
+    DTS:Name="ConnectionString">@[$Project::Staging_ConnectionString]</DTS:PropertyExpression>
+  <DTS:ObjectData>
+    <AzureStorageConnectionManager
+      ConnectionString="DefaultEndpointsProtocol=https;AccountName=backofficestaging;EndpointSuffix=core.windows.net">
+      <AccountKey
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAYbFZkGAXh02/WYfcJ5KuiAAAAAACAAAAAAAQZgAAAAEAACAAAACBzCeM7WrFDhTTOrGDbnIqLRYONzzPcas8T04RvOHDcQAAAAAOgAAAAAIAACAAAAA6qHG7NEORTIPK7PN8eCW5nq79NfdmbQlOxwcKnDjDtIAAAABTp0tWVvVWWEvB6Ww13T2K79wp9iQz8d1Xl0pEjDOC59SSsv14hikS5Z4eWgKBuBITsTDvfG9XvoA0q6m6VStz41tYx07AG2EMfpxDjha1PLvEwUYI0yIDWk8Kl7KJAWkrZZiqPa75q4PmvYs110RjdHN23O2yYIqD4QlZ7YD+vEAAAADb6y6md0SWiOnskC1hLXAW8Z7Hyce87hSZjicGa+cdrynrux5kaFtRI+itgxCvK36nUZsZ/vpuEP0XdZSr+XIp</AccountKey>
+    </AzureStorageConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

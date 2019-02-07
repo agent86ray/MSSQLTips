@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="PROCESS_SUBSCRIPTIONS"
   DTS:PackageType="5"
-  DTS:VersionBuild="8"
-  DTS:VersionGUID="{24C3B50C-BAFF-43A8-897F-4829D1C1BD51}">
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{0716B9C5-BA7C-478C-9111-4CBF6EABD241}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAYbFZkGAXh02/WYfcJ5KuiAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABeALVsLhNTjsJHaeNGpq9uqhVjiPhGFk5BSCKNIhkD7QAAAAAOgAAAAAIAACAAAADOLY42frh4IjXhHW4jUR4Mik02hIlbjR11YnVcXHnUqCAAAACBiHnUYKhtDWnYNmebX+NzF91/zk9GvHw/VgvuWmYPYEAAAACAE4fiLax8S/KziBWG6rD3Vpjm3dQv8anFwWHZ5cuntz3fhJ22rs5PhjPZSMZ15sC826TcPtVrMgF7q3tLH/J/</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAYbFZkGAXh02/WYfcJ5KuiAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADDmTHavfp9I4biz8JQ5wXsnVPKQWS4EfE0Q8NwyeEixwAAAAAOgAAAAAIAACAAAACSpbXlTw0pXjDcbkinzbiORL7Q38jU7bcH2q51gitBRCAAAABr9hR3nNts3Vfc3uATlllBO7Nkv3wkgH3MjJ3n5oANqEAAAACRYWI35CQv+Oc8jq623Z3dWvguS6WXZCfoXrxUIvqGTrOqE/zPlNDcnxHAdAUTIwwHLLXxyf3Q6AcylPEGyFBy</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -123,7 +123,7 @@
           PanelSize="235.2,136"
           Size="235.2,179.2"
           Id="Package\Iterate thru Subscrition Files"
-          TopLeft="75,55" />
+          TopLeft="164.142858660951,28.6941172781287" />
       </GraphLayout>
     </LayoutInfo>
   </Package>

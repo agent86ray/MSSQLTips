@@ -1,52 +1,41 @@
 ﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
-  DTS:CreationDate="2/3/2019 10:28:58 AM"
+  DTS:CreationDate="2/7/2019 5:18:20 AM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="DESKTOP-U8PAEJC"
   DTS:CreatorName="DESKTOP-U8PAEJC\RaymondBarley"
-  DTS:DTSID="{609D9510-E5E9-466A-9AB6-AE2B7BB21BAE}"
+  DTS:DTSID="{722921CA-1E43-4915-92D7-E5E1AA99069B}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.0900.40"
   DTS:LocaleID="1033"
-  DTS:ObjectName="ImportSourceFiles"
+  DTS:ObjectName="UPLOAD_BLOB"
   DTS:PackageType="5"
-  DTS:VersionBuild="17"
-  DTS:VersionGUID="{3D47BD5C-7C61-44AE-BA58-616F767F8136}">
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{271607AF-EF2D-4D12-A13A-C944A4C1609C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
-  <DTS:Variables>
-    <DTS:Variable
-      DTS:CreationName=""
-      DTS:DTSID="{55BD34D8-831C-4F4C-92B7-80AF0DA88A7C}"
-      DTS:IncludeInDebugDump="2345"
-      DTS:Namespace="User"
-      DTS:ObjectName="BLOB_FILE">
-      <DTS:VariableValue
-        DTS:DataType="8"
-        xml:space="preserve"></DTS:VariableValue>
-    </DTS:Variable>
-  </DTS:Variables>
+  <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Azure Blob Download Task"
-      DTS:CreationName="CopyFromBlobTask"
-      DTS:Description="Azure Blob Download Task"
-      DTS:DTSID="{709A5770-581A-4A86-BE65-C88913527EB5}"
-      DTS:ExecutableType="CopyFromBlobTask"
+      DTS:refId="Package\Azure Blob Upload Task"
+      DTS:CreationName="CopyToBlobTask"
+      DTS:Description="Azure Blob Upload Task"
+      DTS:DTSID="{79C41717-3BF3-4970-8A1D-0C149E609929}"
+      DTS:ExecutableType="CopyToBlobTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Azure Blob Download Task"
+      DTS:ObjectName="Azure Blob Upload Task"
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
-        <CopyFromBlobTask
+        <CopyToBlobTask
           ConnectionId="{8C7A3E35-7846-40C6-A93E-8C081BB6F6DD}"
           BlobContainer="subscriptions"
           BlobDirectory="new/"
-          LocalDirectory="C:\backofficeframework\subscriptions"
+          LocalDirectory="C:\backofficeframework\uploads"
           FileNameFilter="*"
-          TimeRangeFrom="2/1/2019 12:00:00 AM -05:00"
-          TimeRangeTo="2/7/2019 11:59:59 PM -05:00" />
+          TimeRangeFrom="1/1/1900 12:00:00 AM -05:00"
+          TimeRangeTo="12/31/2200 12:00:00 AM -05:00" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -63,9 +52,9 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="204.8,41.6"
-          Id="Package\Azure Blob Download Task"
-          TopLeft="173.821430284149,97.505881700879" />
+          Size="189.6,41.6"
+          Id="Package\Azure Blob Upload Task"
+          TopLeft="243.428575574135,121.1294134635" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
