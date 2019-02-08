@@ -3,13 +3,11 @@
   DTS:ObjectName="AzureStorage"
   DTS:DTSID="{8C7A3E35-7846-40C6-A93E-8C081BB6F6DD}"
   DTS:CreationName="AzureStorage">
-  <DTS:PropertyExpression
-    DTS:Name="ConnectionString">@[$Project::Staging_ConnectionString]</DTS:PropertyExpression>
   <DTS:ObjectData>
     <AzureStorageConnectionManager
       ConnectionString="DefaultEndpointsProtocol=https;AccountName=backofficestaging;EndpointSuffix=core.windows.net">
       <AccountKey
-        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAYbFZkGAXh02/WYfcJ5KuiAAAAAACAAAAAAAQZgAAAAEAACAAAACBzCeM7WrFDhTTOrGDbnIqLRYONzzPcas8T04RvOHDcQAAAAAOgAAAAAIAACAAAAA6qHG7NEORTIPK7PN8eCW5nq79NfdmbQlOxwcKnDjDtIAAAABTp0tWVvVWWEvB6Ww13T2K79wp9iQz8d1Xl0pEjDOC59SSsv14hikS5Z4eWgKBuBITsTDvfG9XvoA0q6m6VStz41tYx07AG2EMfpxDjha1PLvEwUYI0yIDWk8Kl7KJAWkrZZiqPa75q4PmvYs110RjdHN23O2yYIqD4QlZ7YD+vEAAAADb6y6md0SWiOnskC1hLXAW8Z7Hyce87hSZjicGa+cdrynrux5kaFtRI+itgxCvK36nUZsZ/vpuEP0XdZSr+XIp</AccountKey>
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAYbFZkGAXh02/WYfcJ5KuiAAAAAACAAAAAAAQZgAAAAEAACAAAAAN1HuZq1/IOSgkNZsJc59LONvMVUN2QTk7RoPQsILRPwAAAAAOgAAAAAIAACAAAADUoxFsJGmTvdQZNcXX/PogZuYBV0d1SRu5DyKgeXGbZoAAAABlAyXSyzO24rGQ13GBsQaHz9GNY35Bu65v4EAydA+irkY2NvvMQ1LtskidRzNF6ZZm80bw6BHwEYF3cBY27V4GEbZk7wuP/RsgqxvZCGTo6nqV+MMqLT5ozdUFdcK626yyTEwBT0Mo/FtLRUAJlK34Bd0Viiw0kebvt064Zmga9kAAAAA6X113Fw+cMothMIMyJLQAxuaeCOqluFNjLh9uWWzo65Szs+aQPpqlymHIIaVXpheGFj8sn0EZjwuu4rhpqoRY</AccountKey>
     </AzureStorageConnectionManager>
   </DTS:ObjectData>
 </DTS:ConnectionManager>

@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="UPLOAD_BLOB"
   DTS:PackageType="5"
-  DTS:VersionBuild="3"
-  DTS:VersionGUID="{271607AF-EF2D-4D12-A13A-C944A4C1609C}">
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{5EB871F6-2E64-4C44-8B98-752289CDC4E2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
