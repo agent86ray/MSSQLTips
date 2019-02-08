@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">DESKTOP-U8PAEJC</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAYbFZkGAXh02/WYfcJ5KuiAAAAAACAAAAAAAQZgAAAAEAACAAAAA5QMg9RmxxfFSVIh5NRoeBZV3X8ql9XNCu1u4QTk5/NgAAAAAOgAAAAAIAACAAAAAfMEhhoHnPTJVkusGVjq3tbBI/3MjkEEncVJFVmwpzvZAAAACfnCi+SDtLSYjJDGPQ5ARH78/T7HT3wG0gRlZzvG/eGYkNYkQV1jpOMKmaOOOPreM/4sxTw81x+b57lm6ckeOFWx12WwzsgCo0y0GyyMMYv4rhbsXMqVkITz2+i9AgTrrn0nP3fM0JdfPidNxF8Y21iInT65uSDc1BB5rDkVjG8ouQLaDQvWhbodqd8Y979MhAAAAA+keRa49vNZXO9EoW1vJF0PeVPlaOS8qpO3Pvf49TzYdUU3kuD3l+Y4uDeyFvxSLJyzuaeUvItQl3YCc1BbRbhg==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAYbFZkGAXh02/WYfcJ5KuiAAAAAACAAAAAAAQZgAAAAEAACAAAABw8Xe6SosTa4hoUx3nFULOQr40FrhEtTloLpIcDhCvDwAAAAAOgAAAAAIAACAAAAD18o5jYXHV/bZwqWPppnKa0jyxfiCwbBd9HCW1SOkqjpAAAADaC6pCHvG/k+U1EdzEH+zEICXcmcIJsaU/AFsdvUxO6/7OfU4iPhIbOvyfq5G4ub0XNhYGGzbDQC5MjFZd/rjSvSlDTEnIKnH+1YnJBdeTHQlx8EBscnlRIL3wPD5A3MtkR6/Ks2oVbN2WZC9tz3eL4A72tjAmiSrxTtGeHMx2O31OHvpv+Di1ZIDw/7lUTctAAAAAijQHLpBBnzODh31uEGaIh0mU5ZjWSrlfCd2JKucfPQgzyurhHZo2+BkX3/FWAMZaQ/4YS+uRFcsklpiSVUtgVw==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -151,10 +151,10 @@
                 <SSIS:Property SSIS:Name="Name">ImportSourceFiles</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">17</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">18</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{3D47BD5C-7C61-44AE-BA58-616F767F8136}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{7592BE95-49F5-41A7-8EBC-DBA397836F82}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -168,16 +168,31 @@
                 <SSIS:Property SSIS:Name="Name">PROCESS_SUBSCRIPTIONS</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">9</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">13</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{0716B9C5-BA7C-478C-9111-4CBF6EABD241}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{5919FD67-0A22-46FE-B9BC-1F5EC4F335D1}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
                 <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
               </SSIS:Properties>
               <SSIS:Parameters>
+                <SSIS:Parameter SSIS:Name="CM.staging.ConnectionString">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">Data Source=payasyougobackoffice.database.windows.net;User ID=cloudadmin;Initial Catalog=staging;Provider=SQLNCLI11.1;Auto Translate=False;</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
                 <SSIS:Parameter SSIS:Name="CM.staging.InitialCatalog">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
@@ -260,10 +275,10 @@
                 <SSIS:Property SSIS:Name="Name">UPLOAD_BLOB</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">4</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">5</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{6D5E085B-FA62-439D-984B-FBA34E56D8A3}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{5EB871F6-2E64-4C44-8B98-752289CDC4E2}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>

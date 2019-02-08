@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="PROCESS_SUBSCRIPTIONS"
   DTS:PackageType="5"
-  DTS:VersionBuild="9"
-  DTS:VersionGUID="{0716B9C5-BA7C-478C-9111-4CBF6EABD241}">
+  DTS:VersionBuild="15"
+  DTS:VersionGUID="{ACA5C209-89CB-4238-AC56-9B67575253A9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -21,15 +21,13 @@
       DTS:CreationName="OLEDB"
       DTS:DTSID="{9DB419E6-4843-4602-A41E-F6DC1F1C0247}"
       DTS:ObjectName="staging">
-      <DTS:PropertyExpression
-        DTS:Name="ConnectionString">@[$Project::Staging_ConnectionString]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectionString="Data Source=payasyougobackoffice.database.windows.net;User ID=cloudadmin;Initial Catalog=staging;Provider=SQLNCLI11.1;Auto Translate=False;">
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAYbFZkGAXh02/WYfcJ5KuiAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADDmTHavfp9I4biz8JQ5wXsnVPKQWS4EfE0Q8NwyeEixwAAAAAOgAAAAAIAACAAAACSpbXlTw0pXjDcbkinzbiORL7Q38jU7bcH2q51gitBRCAAAABr9hR3nNts3Vfc3uATlllBO7Nkv3wkgH3MjJ3n5oANqEAAAACRYWI35CQv+Oc8jq623Z3dWvguS6WXZCfoXrxUIvqGTrOqE/zPlNDcnxHAdAUTIwwHLLXxyf3Q6AcylPEGyFBy</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAYbFZkGAXh02/WYfcJ5KuiAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABcS8By1HVJsm7/+uVPxKvc5/syyDodbt7Uy9KMx72ZNAAAAAAOgAAAAAIAACAAAADUatsGCmZoU7lJh+JNs55IcrokIhR2OlvONBNY7z4GqSAAAAA6OqKncFNGyZ91Fs0ekOAHF0duIAu29YhtnkQIgJIhuEAAAAD2QKLzdwWahypGEfcm5bey89UMKgUbMDA34hM5m4tJsbb0osbljeZavu45KRTrL74t4YLCQcy2nkgQ8sL8xOp2</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -62,9 +60,9 @@
         <DTS:ObjectData>
           <ForEachFileEnumeratorProperties>
             <FEFEProperty
-              Folder="Z:\subscriptions" />
+              Folder="C:\backofficeframework\subscriptions" />
             <FEFEProperty
-              FileSpec="subscription*.csv" />
+              FileSpec="subscription*.txt" />
             <FEFEProperty
               FileNameRetrievalType="0" />
             <FEFEProperty
@@ -75,27 +73,34 @@
       <DTS:Variables />
       <DTS:Executables>
         <DTS:Executable
-          DTS:refId="Package\Iterate thru Subscrition Files\Execute SQL Task"
+          DTS:refId="Package\Iterate thru Subscrition Files\BULK INSERT FILE TO SUBSCRIPTIONS TABLE"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
           DTS:DTSID="{171AB1DD-4AB1-4CED-B4D5-E17DE0265BE1}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Execute SQL Task"
+          DTS:ObjectName="BULK INSERT FILE TO SUBSCRIPTIONS TABLE"
           DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{9DB419E6-4843-4602-A41E-F6DC1F1C0247}"
-              SQLTask:SqlStatementSource="select 1" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="exec [dbo].[BulkInsertPipeDelimited]&#xA;  @file = ?, @table = '[dbo].[SUBSCRIPTIONS]';&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::SUBSCRIPTION_FILE"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{49BFB31F-8CF5-48D8-A8AE-4BFFF046A676}"
-          DTS:ObjectName="{49BFB31F-8CF5-48D8-A8AE-4BFFF046A676}"
+          DTS:DTSID="{2952E728-D7DD-480F-825C-F19E72189951}"
+          DTS:ObjectName="{2952E728-D7DD-480F-825C-F19E72189951}"
           DTS:ValueIndex="0"
           DTS:VariableName="User::SUBSCRIPTION_FILE" />
       </DTS:ForEachVariableMappings>
@@ -114,14 +119,14 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="163.2,41.6"
-          Id="Package\Iterate thru Subscrition Files\Execute SQL Task"
-          TopLeft="35,37.5" />
+          Size="299.2,41.6"
+          Id="Package\Iterate thru Subscrition Files\BULK INSERT FILE TO SUBSCRIPTIONS TABLE"
+          TopLeft="28.7142856072406,40.5588235723106" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="235.2,136"
-          Size="235.2,179.2"
+          PanelSize="339.2,136"
+          Size="339.2,179.2"
           Id="Package\Iterate thru Subscrition Files"
           TopLeft="164.142858660951,28.6941172781287" />
       </GraphLayout>
