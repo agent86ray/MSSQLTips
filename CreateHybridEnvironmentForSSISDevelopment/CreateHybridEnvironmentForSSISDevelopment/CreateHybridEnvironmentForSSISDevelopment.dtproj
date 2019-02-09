@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">DESKTOP-U8PAEJC</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAYbFZkGAXh02/WYfcJ5KuiAAAAAACAAAAAAAQZgAAAAEAACAAAAB/NV73fqhWxu/4uXOzazemMpDXCyKE1jBUGocy8N1TDAAAAAAOgAAAAAIAACAAAAD/JuZeymnAzgRHJu2syDFhNkQFPW4ogdxuHDJnTAOZDJAAAAAMGuZvAzKb/qh8STfceKrH+4PsVknxe9lh7q075J5QOpDlv/q4maMcR8EhLUP9sPi312QRikeyOONaT4jwSZRDQ1ltuh2cmuLxvQ0SW2kvW6FYtj/d8YUFP6PdUBbshjjpaaHJ7X81cvzpWshgXkB7A1HacfaFstUP4vNit/J9eYRNlhFNHnUzdAn7sRzDrf5AAAAAuhxMUE5KUg7wIQzcNrUm96BsUjWur6gw3p2WG+xRzc3Q4mDFER7ot6S6VjIwrOBI0Sx3j697ExDi91onnP31Nw==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAYbFZkGAXh02/WYfcJ5KuiAAAAAACAAAAAAAQZgAAAAEAACAAAAD/l7zl3ej6H7jAqmOdex9QIij0MpT5wdENyQpgE2LWRAAAAAAOgAAAAAIAACAAAAD8b0BVup5TNpej/Yq0CccNxTVK/z9LL8nY9CW8ynbTyZAAAAA5ExTL2NTMGaSrpdBYDnhS/uyEl8Xy0etYQJrHl1Hty6ts8/rOIgQyZjskZS8vXzpmmYLNNdnh7e8BE/DVUZi5u6PRBU5UJ0G2HqBS2Z/6PkugkQIQ2rMvdMLHNuzUMHGcsGvTBWFtiRLGBVwrgiWAX88Tg7b9VTfoyj3Pt76eU0tQaBnXLx3wA7e4+bgboFlAAAAAkVpbziRk8Zp/iJuBGeoulfcZQkH6SyyIsyUK5Azre3U6g0Mf0XD88DdHQLHjX1X8JL6pTg3H3EQfElcY9ykFYg==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -34,6 +34,7 @@
           <SSIS:Package SSIS:Name="UPLOAD_BLOB.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="DOWNLOAD_BLOB.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="STAGE_SUBSCRIPTIONS.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="EXTRACT_SUBSCRIPTIONS.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="AzureStorage.conmgr" />
@@ -427,10 +428,10 @@
                 <SSIS:Property SSIS:Name="Name">UPLOAD_BLOB</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">6</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">5</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{A7ACF37D-68C0-4FC1-B1AD-3A83EF8C2849}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{5EB871F6-2E64-4C44-8B98-752289CDC4E2}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -461,16 +462,123 @@
                 <SSIS:Property SSIS:Name="Name">STAGE_SUBSCRIPTIONS</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">5</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">7</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{4E431E0F-55BC-4446-9322-59C7C60E915C}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{92118121-7770-46D6-B7EE-AD12B67B0B96}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
                 <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
               </SSIS:Properties>
               <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="EXTRACT_SUBSCRIPTIONS.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{A4D1A14D-1486-4989-A58F-82411E164428}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">EXTRACT_SUBSCRIPTIONS</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{5084C26C-A546-4969-9A8A-F16F27BBA630}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters>
+                <SSIS:Parameter SSIS:Name="CM.AdventureWorksLT.ConnectionString">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">Data Source=payasyougobackoffice.database.windows.net;User ID=cloudadmin;Initial Catalog=AdventureWorksLT;Provider=SQLNCLI11.1;Auto Translate=False;</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="CM.AdventureWorksLT.InitialCatalog">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">AdventureWorksLT</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="CM.AdventureWorksLT.Password">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">1</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="CM.AdventureWorksLT.RetainSameConnection">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">false</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="CM.AdventureWorksLT.ServerName">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">payasyougobackoffice.database.windows.net</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="CM.AdventureWorksLT.UserName">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">cloudadmin</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+              </SSIS:Parameters>
             </SSIS:PackageMetaData>
           </SSIS:PackageInfo>
         </SSIS:DeploymentInfo>

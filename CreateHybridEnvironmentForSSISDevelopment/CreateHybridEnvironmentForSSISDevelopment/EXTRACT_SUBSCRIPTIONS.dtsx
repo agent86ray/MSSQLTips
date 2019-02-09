@@ -1,0 +1,507 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="2/9/2019 12:07:22 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-U8PAEJC"
+  DTS:CreatorName="DESKTOP-U8PAEJC\RaymondBarley"
+  DTS:DTSID="{A4D1A14D-1486-4989-A58F-82411E164428}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.0900.40"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="EXTRACT_SUBSCRIPTIONS"
+  DTS:PackageType="5"
+  DTS:VersionBuild="1"
+  DTS:VersionGUID="{5084C26C-A546-4969-9A8A-F16F27BBA630}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[AdventureWorksLT]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{0C586D54-9351-41DD-A8AA-AA23B1C616C7}"
+      DTS:ObjectName="AdventureWorksLT">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=payasyougobackoffice.database.windows.net;User ID=cloudadmin;Initial Catalog=AdventureWorksLT;Provider=SQLNCLI11.1;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAYbFZkGAXh02/WYfcJ5KuiAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABBSuMUB9lS/hnVEPUSOWDZc/TYgMnE+E6Jp2lqCsTAnwAAAAAOgAAAAAIAACAAAADrfYu2WIFoyEf1Ik5BpIpEQWxvVnAEyc1ZKwukY1FZLCAAAACPfnfxAMX5OfSdpUSuKQSIq+BS22iLCEInuQQ3ssOcYkAAAABiCKiSIfBd9SSCjgRTGlhaNm3RShMJzUlHPnIBr9m+xZFaOGetlMdYNuUwDjF4KHpr2/p2YG2GcBOgY650zBt3</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{FE7875AE-63D5-4833-A64F-7B613D96126D}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task\Azure Blob Destination"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="© Microsoft Corporation; All Rights Reserved;"
+              description="Loads data into a blob in Azure Storage. The supported file formats are: Text and Avro."
+              name="Azure Blob Destination"
+              validateExternalMetadata="False">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="The name of blob container"
+                  expressionType="Notify"
+                  name="Blob Container">subscriptions</property>
+                <property
+                  dataType="System.String"
+                  description="The full name of blob"
+                  expressionType="Notify"
+                  name="Blob Name">new/subscriptions_extract</property>
+                <property
+                  dataType="System.Int32"
+                  description="The format of blob file"
+                  name="Blob Format"
+                  typeConverter="Microsoft.SqlServer.IntegrationService.CloudComponents.Utilities.AzBlobFormatEnumStringConverter">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Compress File"
+                  name="Compress File">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="The compression type"
+                  name="Compression Type"
+                  typeConverter="Microsoft.SqlServer.IntegrationService.CloudComponents.Utilities.AzCompressionTypeEnumStringConverter">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="The compression level"
+                  name="Compression Level"
+                  typeConverter="Microsoft.SqlServer.IntegrationService.CloudComponents.Utilities.AzCompressionLevelEnumStringConverter">0</property>
+                <property
+                  dataType="System.String"
+                  description="The character used to delimit columns in text file"
+                  name="Column Delimiter">|</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Column names in the first data row"
+                  name="First Row as Column Names">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">AzBlobDest</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Azure Blob Destination.Connections[Azure Storage]"
+                  connectionManagerID="{8C7A3E35-7846-40C6-A93E-8C081BB6F6DD}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[AzureStorage]"
+                  description="Connection Manager for Azure Storage"
+                  name="Azure Storage" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Azure Blob Destination.Inputs[Input]"
+                  hasSideEffects="true"
+                  name="Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Azure Blob Destination.Inputs[Input].Columns[CompanyName]"
+                      cachedDataType="wstr"
+                      cachedLength="128"
+                      cachedName="CompanyName"
+                      externalMetadataColumnId="Package\Data Flow Task\Azure Blob Destination.Inputs[Input].ExternalColumns[CompanyName]"
+                      lineageId="Package\Data Flow Task\Subscriptions.Outputs[OLE DB Source Output].Columns[CompanyName]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Azure Blob Destination.Inputs[Input].Columns[AddressLine1]"
+                      cachedDataType="wstr"
+                      cachedLength="60"
+                      cachedName="AddressLine1"
+                      externalMetadataColumnId="Package\Data Flow Task\Azure Blob Destination.Inputs[Input].ExternalColumns[AddressLine1]"
+                      lineageId="Package\Data Flow Task\Subscriptions.Outputs[OLE DB Source Output].Columns[AddressLine1]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Azure Blob Destination.Inputs[Input].Columns[AddressLine2]"
+                      cachedDataType="wstr"
+                      cachedLength="60"
+                      cachedName="AddressLine2"
+                      externalMetadataColumnId="Package\Data Flow Task\Azure Blob Destination.Inputs[Input].ExternalColumns[AddressLine2]"
+                      lineageId="Package\Data Flow Task\Subscriptions.Outputs[OLE DB Source Output].Columns[AddressLine2]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Azure Blob Destination.Inputs[Input].Columns[City]"
+                      cachedDataType="wstr"
+                      cachedLength="30"
+                      cachedName="City"
+                      externalMetadataColumnId="Package\Data Flow Task\Azure Blob Destination.Inputs[Input].ExternalColumns[City]"
+                      lineageId="Package\Data Flow Task\Subscriptions.Outputs[OLE DB Source Output].Columns[City]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Azure Blob Destination.Inputs[Input].Columns[StateProvince]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="StateProvince"
+                      externalMetadataColumnId="Package\Data Flow Task\Azure Blob Destination.Inputs[Input].ExternalColumns[StateProvince]"
+                      lineageId="Package\Data Flow Task\Subscriptions.Outputs[OLE DB Source Output].Columns[StateProvince]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Azure Blob Destination.Inputs[Input].Columns[PostalCode]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="PostalCode"
+                      externalMetadataColumnId="Package\Data Flow Task\Azure Blob Destination.Inputs[Input].ExternalColumns[PostalCode]"
+                      lineageId="Package\Data Flow Task\Subscriptions.Outputs[OLE DB Source Output].Columns[PostalCode]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Azure Blob Destination.Inputs[Input].ExternalColumns[CompanyName]"
+                      dataType="wstr"
+                      length="128"
+                      name="CompanyName" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Azure Blob Destination.Inputs[Input].ExternalColumns[AddressLine1]"
+                      dataType="wstr"
+                      length="60"
+                      name="AddressLine1" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Azure Blob Destination.Inputs[Input].ExternalColumns[AddressLine2]"
+                      dataType="wstr"
+                      length="60"
+                      name="AddressLine2" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Azure Blob Destination.Inputs[Input].ExternalColumns[City]"
+                      dataType="wstr"
+                      length="30"
+                      name="City" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Azure Blob Destination.Inputs[Input].ExternalColumns[StateProvince]"
+                      dataType="wstr"
+                      length="50"
+                      name="StateProvince" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Azure Blob Destination.Inputs[Input].ExternalColumns[PostalCode]"
+                      dataType="wstr"
+                      length="15"
+                      name="PostalCode" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Subscriptions"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Subscriptions"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT 
+	 c.CompanyName
+	,a.AddressLine1
+	,a.AddressLine2
+	,a.City
+	,a.StateProvince
+	,a.PostalCode 
+FROM
+	SalesLT.Customer c
+JOIN
+	SalesLT.CustomerAddress ca ON ca.CustomerID = c.CustomerID
+JOIN
+	SalesLT.[Address] a ON a.AddressID = ca.AddressID
+WHERE
+	c.CompanyName IS NOT NULL</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Subscriptions.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[AdventureWorksLT]"
+                  connectionManagerRefId="Package.ConnectionManagers[AdventureWorksLT]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Subscriptions.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Subscriptions.Outputs[OLE DB Source Output].Columns[CompanyName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Subscriptions.Outputs[OLE DB Source Output].ExternalColumns[CompanyName]"
+                      length="128"
+                      lineageId="Package\Data Flow Task\Subscriptions.Outputs[OLE DB Source Output].Columns[CompanyName]"
+                      name="CompanyName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Subscriptions.Outputs[OLE DB Source Output].Columns[AddressLine1]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Subscriptions.Outputs[OLE DB Source Output].ExternalColumns[AddressLine1]"
+                      length="60"
+                      lineageId="Package\Data Flow Task\Subscriptions.Outputs[OLE DB Source Output].Columns[AddressLine1]"
+                      name="AddressLine1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Subscriptions.Outputs[OLE DB Source Output].Columns[AddressLine2]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Subscriptions.Outputs[OLE DB Source Output].ExternalColumns[AddressLine2]"
+                      length="60"
+                      lineageId="Package\Data Flow Task\Subscriptions.Outputs[OLE DB Source Output].Columns[AddressLine2]"
+                      name="AddressLine2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Subscriptions.Outputs[OLE DB Source Output].Columns[City]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Subscriptions.Outputs[OLE DB Source Output].ExternalColumns[City]"
+                      length="30"
+                      lineageId="Package\Data Flow Task\Subscriptions.Outputs[OLE DB Source Output].Columns[City]"
+                      name="City"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Subscriptions.Outputs[OLE DB Source Output].Columns[StateProvince]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Subscriptions.Outputs[OLE DB Source Output].ExternalColumns[StateProvince]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Subscriptions.Outputs[OLE DB Source Output].Columns[StateProvince]"
+                      name="StateProvince"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Subscriptions.Outputs[OLE DB Source Output].Columns[PostalCode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Subscriptions.Outputs[OLE DB Source Output].ExternalColumns[PostalCode]"
+                      length="15"
+                      lineageId="Package\Data Flow Task\Subscriptions.Outputs[OLE DB Source Output].Columns[PostalCode]"
+                      name="PostalCode"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Subscriptions.Outputs[OLE DB Source Output].ExternalColumns[CompanyName]"
+                      dataType="wstr"
+                      length="128"
+                      name="CompanyName" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Subscriptions.Outputs[OLE DB Source Output].ExternalColumns[AddressLine1]"
+                      dataType="wstr"
+                      length="60"
+                      name="AddressLine1" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Subscriptions.Outputs[OLE DB Source Output].ExternalColumns[AddressLine2]"
+                      dataType="wstr"
+                      length="60"
+                      name="AddressLine2" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Subscriptions.Outputs[OLE DB Source Output].ExternalColumns[City]"
+                      dataType="wstr"
+                      length="30"
+                      name="City" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Subscriptions.Outputs[OLE DB Source Output].ExternalColumns[StateProvince]"
+                      dataType="wstr"
+                      length="50"
+                      name="StateProvince" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Subscriptions.Outputs[OLE DB Source Output].ExternalColumns[PostalCode]"
+                      dataType="wstr"
+                      length="15"
+                      name="PostalCode" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Subscriptions.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Subscriptions.Outputs[OLE DB Source Error Output].Columns[CompanyName]"
+                      dataType="wstr"
+                      length="128"
+                      lineageId="Package\Data Flow Task\Subscriptions.Outputs[OLE DB Source Error Output].Columns[CompanyName]"
+                      name="CompanyName" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Subscriptions.Outputs[OLE DB Source Error Output].Columns[AddressLine1]"
+                      dataType="wstr"
+                      length="60"
+                      lineageId="Package\Data Flow Task\Subscriptions.Outputs[OLE DB Source Error Output].Columns[AddressLine1]"
+                      name="AddressLine1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Subscriptions.Outputs[OLE DB Source Error Output].Columns[AddressLine2]"
+                      dataType="wstr"
+                      length="60"
+                      lineageId="Package\Data Flow Task\Subscriptions.Outputs[OLE DB Source Error Output].Columns[AddressLine2]"
+                      name="AddressLine2" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Subscriptions.Outputs[OLE DB Source Error Output].Columns[City]"
+                      dataType="wstr"
+                      length="30"
+                      lineageId="Package\Data Flow Task\Subscriptions.Outputs[OLE DB Source Error Output].Columns[City]"
+                      name="City" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Subscriptions.Outputs[OLE DB Source Error Output].Columns[StateProvince]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Subscriptions.Outputs[OLE DB Source Error Output].Columns[StateProvince]"
+                      name="StateProvince" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Subscriptions.Outputs[OLE DB Source Error Output].Columns[PostalCode]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Data Flow Task\Subscriptions.Outputs[OLE DB Source Error Output].Columns[PostalCode]"
+                      name="PostalCode" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Subscriptions.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Subscriptions.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Subscriptions.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Subscriptions.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task.Paths[OLE DB Source Output]"
+              endId="Package\Data Flow Task\Azure Blob Destination.Inputs[Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task\Subscriptions.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\Data Flow Task"
+          TopLeft="221.142860908898,85.035295310235" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="140.8,41.6"
+          Id="Package\Data Flow Task\Subscriptions"
+          TopLeft="212.000003610339,64.2352950185228" />
+        <NodeLayout
+          Size="184.8,41.6"
+          Id="Package\Data Flow Task\Azure Blob Destination"
+          TopLeft="193.14286043206,153.552943329993" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
+          TopLeft="283.9714320212,105.835295018523">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47.7176483114698"
+              Start="0,0"
+              End="0,40.2176483114698">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.2176483114698" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Subscriptions">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Azure Blob Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
