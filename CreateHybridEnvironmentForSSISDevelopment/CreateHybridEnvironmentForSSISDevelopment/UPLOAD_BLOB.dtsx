@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="UPLOAD_BLOB"
   DTS:PackageType="5"
-  DTS:VersionBuild="5"
-  DTS:VersionGUID="{5EB871F6-2E64-4C44-8B98-752289CDC4E2}">
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{A7ACF37D-68C0-4FC1-B1AD-3A83EF8C2849}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -54,7 +54,7 @@
         <NodeLayout
           Size="189.6,41.6"
           Id="Package\Azure Blob Upload Task"
-          TopLeft="243.428575574135,121.1294134635" />
+          TopLeft="177.142860159582,111.341178032106" />
       </GraphLayout>
     </LayoutInfo>
   </Package>

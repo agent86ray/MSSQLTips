@@ -1,4 +1,14 @@
--- create the following table
+-- use this table for the STAGE_SUBSCRIPTIONS package
+CREATE TABLE [dbo].[SUBSCRIPTIONS](
+	[ACCOUNT_NAME] [nvarchar](50) NULL,
+	[ADDRESS1] [nvarchar](50) NULL,
+	[ADDRESS2] [nvarchar](50) NULL,
+	[CITY] [nvarchar](50) NULL,
+	[STATE] [nvarchar](50) NULL,
+	[ZIP] [nvarchar](50) NULL
+) 
+
+-- use this table for the PROCESS_SUBSCRIPTIONS package
 CREATE TABLE dbo.SUBSCRIPTIONS (
 	[ACCOUNT_NAME]	VARCHAR(50),
 	[ADDRESS1]		VARCHAR(50),

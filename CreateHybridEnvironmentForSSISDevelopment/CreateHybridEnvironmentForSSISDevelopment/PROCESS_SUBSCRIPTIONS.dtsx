@@ -11,26 +11,11 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="PROCESS_SUBSCRIPTIONS"
   DTS:PackageType="5"
-  DTS:VersionBuild="17"
-  DTS:VersionGUID="{DAF26484-2DD6-4B93-A305-6FC5E44A812B}">
+  DTS:VersionBuild="18"
+  DTS:VersionGUID="{12875764-F3B8-4262-923F-96A0C36D4976}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[staging]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{9DB419E6-4843-4602-A41E-F6DC1F1C0247}"
-      DTS:ObjectName="staging">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=payasyougobackoffice.database.windows.net;User ID=cloudadmin;Initial Catalog=staging;Provider=SQLNCLI11.1;Auto Translate=False;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAYbFZkGAXh02/WYfcJ5KuiAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADTrnAUsgLUiD24rma7BRniGgWCn8QZM50npMv2FIGlywAAAAAOgAAAAAIAACAAAADwCrjYrWyj9RUnQXBaAom1I3rm3dlBRXfQO3W8TmIlfSAAAABZK6kZgPNwEM46ELmfj/raXEjYgHRilXj8sXKyw3wTnEAAAAAyrdLwU3TXxqPuYTKJbtWc2IAzYo4hBNjcnb6nlL0XonUSOfA3Gk2a2QU1+jM8bNZw9caCRDIPpLRqA+VLhljP</DTS:Password>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[SubscriptionFlatFile]"
       DTS:CreationName="FLATFILE"
@@ -453,8 +438,8 @@
                   <connections>
                     <connection
                       refId="Package\Iterate thru Subscrition Files\Data Flow Task\Subscriptions.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[staging]"
-                      connectionManagerRefId="Package.ConnectionManagers[staging]"
+                      connectionManagerID="{9DB419E6-4843-4602-A41E-F6DC1F1C0247}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[staging]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>

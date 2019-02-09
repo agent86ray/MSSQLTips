@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="staging"
+  DTS:DTSID="{9DB419E6-4843-4602-A41E-F6DC1F1C0247}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=payasyougobackoffice.database.windows.net;User ID=cloudadmin;Initial Catalog=staging;Provider=SQLNCLI11.1;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAYbFZkGAXh02/WYfcJ5KuiAAAAAACAAAAAAAQZgAAAAEAACAAAACJ22uRy1pm1OK6dG21qHALchT9d/0rlTJBtIaedyHhygAAAAAOgAAAAAIAACAAAADyqB9T9RT1n6B0kjNAvLNVhF2SkQ4kn9MkRVBJP00YtIAAAABB3BA8J2i0fZTbVhV1P/8YFubRSTcEBJaiyv6A2U/rUROXI9qyQpHnUO3qRuBLF5DvZYIozDnmBVDobElMF7ypLIQPTGBs7dZoUVc+T+1q12YMi5/bG5ZWPSTlO2u/NLePeNlrseHliNQSP24LN6yfLSpaNE5oyyN1x4j7cunlYEAAAAAVJPTXGgDPF4Bf2ld5lvVjuK+ntFqjHjWsDPaOrqDz0X9kjqnPM0/FimGdnBRxIU/vQm1PuT6e+ttwkSNWLzK3</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

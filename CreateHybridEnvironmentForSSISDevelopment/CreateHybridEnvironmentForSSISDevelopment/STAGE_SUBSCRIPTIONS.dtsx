@@ -1,0 +1,527 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="2/9/2019 9:10:47 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-U8PAEJC"
+  DTS:CreatorName="DESKTOP-U8PAEJC\RaymondBarley"
+  DTS:DTSID="{5E024E3E-76DA-4810-B566-96AD38B1C789}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.0900.40"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="STAGE_SUBSCRIPTIONS"
+  DTS:PackageType="5"
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{4E431E0F-55BC-4446-9322-59C7C60E915C}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C43FE797-60D1-424C-B687-46C5CD63E828}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="BLOB_NAME">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Load SUBSCRIPTIONS from Azure Blob Storage"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{13F53C84-CE1A-47E3-9126-19E1092903E0}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load SUBSCRIPTIONS from Azure Blob Storage"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\Azure Blob Source"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="© Microsoft Corporation; All Rights Reserved;"
+              description="Extracts data from a blob in Azure Storage. The supported file formats are: Text and Avro."
+              name="Azure Blob Source"
+              usesDispositions="true"
+              validateExternalMetadata="False">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="The name of blob container"
+                  expressionType="Notify"
+                  name="Blob Container">subscriptions</property>
+                <property
+                  dataType="System.String"
+                  description="The full name of blob"
+                  expressionType="Notify"
+                  name="Blob Name">new/subscription_318E1765-1BB6-4E35-81BB-7936AB62B26B.txt</property>
+                <property
+                  dataType="System.Int32"
+                  description="The format of blob file"
+                  name="Blob Format"
+                  typeConverter="Microsoft.SqlServer.IntegrationService.CloudComponents.Utilities.AzBlobFormatEnumStringConverter">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Compress File"
+                  name="Compress File">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="The compression type"
+                  name="Compression Type"
+                  typeConverter="Microsoft.SqlServer.IntegrationService.CloudComponents.Utilities.AzCompressionTypeEnumStringConverter">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="The compression level"
+                  name="Compression Level"
+                  typeConverter="Microsoft.SqlServer.IntegrationService.CloudComponents.Utilities.AzCompressionLevelEnumStringConverter">0</property>
+                <property
+                  dataType="System.String"
+                  description="The character used to delimit columns in text file"
+                  name="Column Delimiter">|</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Column names in the first data row"
+                  name="First Row as Column Names">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">AzBlobSrc</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\Azure Blob Source.Connections[Azure Storage]"
+                  connectionManagerID="{8C7A3E35-7846-40C6-A93E-8C081BB6F6DD}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[AzureStorage]"
+                  description="Connection Manager for Azure Storage"
+                  name="Azure Storage" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\Azure Blob Source.Outputs[Output]"
+                  name="Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\Azure Blob Source.Outputs[Output].Columns[ACCOUNT_NAME]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\Azure Blob Source.Outputs[Output].ExternalColumns[ACCOUNT_NAME]"
+                      length="50"
+                      lineageId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\Azure Blob Source.Outputs[Output].Columns[ACCOUNT_NAME]"
+                      name="ACCOUNT_NAME"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\Azure Blob Source.Outputs[Output].Columns[ADDRESS1]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\Azure Blob Source.Outputs[Output].ExternalColumns[ADDRESS1]"
+                      length="50"
+                      lineageId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\Azure Blob Source.Outputs[Output].Columns[ADDRESS1]"
+                      name="ADDRESS1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\Azure Blob Source.Outputs[Output].Columns[ADDRESS2]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\Azure Blob Source.Outputs[Output].ExternalColumns[ADDRESS2]"
+                      length="50"
+                      lineageId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\Azure Blob Source.Outputs[Output].Columns[ADDRESS2]"
+                      name="ADDRESS2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\Azure Blob Source.Outputs[Output].Columns[CITY]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\Azure Blob Source.Outputs[Output].ExternalColumns[CITY]"
+                      length="50"
+                      lineageId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\Azure Blob Source.Outputs[Output].Columns[CITY]"
+                      name="CITY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\Azure Blob Source.Outputs[Output].Columns[STATE]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\Azure Blob Source.Outputs[Output].ExternalColumns[STATE]"
+                      length="50"
+                      lineageId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\Azure Blob Source.Outputs[Output].Columns[STATE]"
+                      name="STATE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\Azure Blob Source.Outputs[Output].Columns[ZIP]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\Azure Blob Source.Outputs[Output].ExternalColumns[ZIP]"
+                      length="50"
+                      lineageId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\Azure Blob Source.Outputs[Output].Columns[ZIP]"
+                      name="ZIP"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\Azure Blob Source.Outputs[Output].ExternalColumns[ACCOUNT_NAME]"
+                      dataType="wstr"
+                      length="255"
+                      name="ACCOUNT_NAME" />
+                    <externalMetadataColumn
+                      refId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\Azure Blob Source.Outputs[Output].ExternalColumns[ADDRESS1]"
+                      dataType="wstr"
+                      length="255"
+                      name="ADDRESS1" />
+                    <externalMetadataColumn
+                      refId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\Azure Blob Source.Outputs[Output].ExternalColumns[ADDRESS2]"
+                      dataType="wstr"
+                      length="255"
+                      name="ADDRESS2" />
+                    <externalMetadataColumn
+                      refId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\Azure Blob Source.Outputs[Output].ExternalColumns[CITY]"
+                      dataType="wstr"
+                      length="255"
+                      name="CITY" />
+                    <externalMetadataColumn
+                      refId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\Azure Blob Source.Outputs[Output].ExternalColumns[STATE]"
+                      dataType="wstr"
+                      length="255"
+                      name="STATE" />
+                    <externalMetadataColumn
+                      refId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\Azure Blob Source.Outputs[Output].ExternalColumns[ZIP]"
+                      dataType="wstr"
+                      length="255"
+                      name="ZIP" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\Azure Blob Source.Outputs[Error output]"
+                  isErrorOut="true"
+                  name="Error output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\Azure Blob Source.Outputs[Error output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\Azure Blob Source.Outputs[Error output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\Azure Blob Source.Outputs[Error output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\Azure Blob Source.Outputs[Error output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\Azure Blob Source.Outputs[Error output].Columns[ACCOUNT_NAME]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\Azure Blob Source.Outputs[Error output].Columns[ACCOUNT_NAME]"
+                      name="ACCOUNT_NAME" />
+                    <outputColumn
+                      refId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\Azure Blob Source.Outputs[Error output].Columns[ADDRESS1]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\Azure Blob Source.Outputs[Error output].Columns[ADDRESS1]"
+                      name="ADDRESS1" />
+                    <outputColumn
+                      refId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\Azure Blob Source.Outputs[Error output].Columns[ADDRESS2]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\Azure Blob Source.Outputs[Error output].Columns[ADDRESS2]"
+                      name="ADDRESS2" />
+                    <outputColumn
+                      refId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\Azure Blob Source.Outputs[Error output].Columns[CITY]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\Azure Blob Source.Outputs[Error output].Columns[CITY]"
+                      name="CITY" />
+                    <outputColumn
+                      refId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\Azure Blob Source.Outputs[Error output].Columns[STATE]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\Azure Blob Source.Outputs[Error output].Columns[STATE]"
+                      name="STATE" />
+                    <outputColumn
+                      refId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\Azure Blob Source.Outputs[Error output].Columns[ZIP]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\Azure Blob Source.Outputs[Error output].Columns[ZIP]"
+                      name="ZIP" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\SUBSCRIPTIONS"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="SUBSCRIPTIONS"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[SUBSCRIPTIONS]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\SUBSCRIPTIONS.Connections[OleDbConnection]"
+                  connectionManagerID="{9DB419E6-4843-4602-A41E-F6DC1F1C0247}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[staging]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\SUBSCRIPTIONS.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\SUBSCRIPTIONS.Inputs[OLE DB Destination Input].Columns[ACCOUNT_NAME]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="ACCOUNT_NAME"
+                      externalMetadataColumnId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\SUBSCRIPTIONS.Inputs[OLE DB Destination Input].ExternalColumns[ACCOUNT_NAME]"
+                      lineageId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\Azure Blob Source.Outputs[Output].Columns[ACCOUNT_NAME]" />
+                    <inputColumn
+                      refId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\SUBSCRIPTIONS.Inputs[OLE DB Destination Input].Columns[ADDRESS1]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="ADDRESS1"
+                      externalMetadataColumnId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\SUBSCRIPTIONS.Inputs[OLE DB Destination Input].ExternalColumns[ADDRESS1]"
+                      lineageId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\Azure Blob Source.Outputs[Output].Columns[ADDRESS1]" />
+                    <inputColumn
+                      refId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\SUBSCRIPTIONS.Inputs[OLE DB Destination Input].Columns[ADDRESS2]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="ADDRESS2"
+                      externalMetadataColumnId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\SUBSCRIPTIONS.Inputs[OLE DB Destination Input].ExternalColumns[ADDRESS2]"
+                      lineageId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\Azure Blob Source.Outputs[Output].Columns[ADDRESS2]" />
+                    <inputColumn
+                      refId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\SUBSCRIPTIONS.Inputs[OLE DB Destination Input].Columns[CITY]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="CITY"
+                      externalMetadataColumnId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\SUBSCRIPTIONS.Inputs[OLE DB Destination Input].ExternalColumns[CITY]"
+                      lineageId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\Azure Blob Source.Outputs[Output].Columns[CITY]" />
+                    <inputColumn
+                      refId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\SUBSCRIPTIONS.Inputs[OLE DB Destination Input].Columns[STATE]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="STATE"
+                      externalMetadataColumnId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\SUBSCRIPTIONS.Inputs[OLE DB Destination Input].ExternalColumns[STATE]"
+                      lineageId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\Azure Blob Source.Outputs[Output].Columns[STATE]" />
+                    <inputColumn
+                      refId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\SUBSCRIPTIONS.Inputs[OLE DB Destination Input].Columns[ZIP]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="ZIP"
+                      externalMetadataColumnId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\SUBSCRIPTIONS.Inputs[OLE DB Destination Input].ExternalColumns[ZIP]"
+                      lineageId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\Azure Blob Source.Outputs[Output].Columns[ZIP]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\SUBSCRIPTIONS.Inputs[OLE DB Destination Input].ExternalColumns[ACCOUNT_NAME]"
+                      dataType="wstr"
+                      length="50"
+                      name="ACCOUNT_NAME" />
+                    <externalMetadataColumn
+                      refId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\SUBSCRIPTIONS.Inputs[OLE DB Destination Input].ExternalColumns[ADDRESS1]"
+                      dataType="wstr"
+                      length="50"
+                      name="ADDRESS1" />
+                    <externalMetadataColumn
+                      refId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\SUBSCRIPTIONS.Inputs[OLE DB Destination Input].ExternalColumns[ADDRESS2]"
+                      dataType="wstr"
+                      length="50"
+                      name="ADDRESS2" />
+                    <externalMetadataColumn
+                      refId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\SUBSCRIPTIONS.Inputs[OLE DB Destination Input].ExternalColumns[CITY]"
+                      dataType="wstr"
+                      length="50"
+                      name="CITY" />
+                    <externalMetadataColumn
+                      refId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\SUBSCRIPTIONS.Inputs[OLE DB Destination Input].ExternalColumns[STATE]"
+                      dataType="wstr"
+                      length="50"
+                      name="STATE" />
+                    <externalMetadataColumn
+                      refId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\SUBSCRIPTIONS.Inputs[OLE DB Destination Input].ExternalColumns[ZIP]"
+                      dataType="wstr"
+                      length="50"
+                      name="ZIP" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\SUBSCRIPTIONS.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\SUBSCRIPTIONS.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\SUBSCRIPTIONS.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\SUBSCRIPTIONS.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\SUBSCRIPTIONS.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\SUBSCRIPTIONS.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load SUBSCRIPTIONS from Azure Blob Storage.Paths[Output]"
+              endId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\SUBSCRIPTIONS.Inputs[OLE DB Destination Input]"
+              name="Output"
+              startId="Package\Load SUBSCRIPTIONS from Azure Blob Storage\Azure Blob Source.Outputs[Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="301.6,41.6"
+          Id="Package\Load SUBSCRIPTIONS from Azure Blob Storage"
+          TopLeft="178.285717321902,120.423531033341" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Load SUBSCRIPTIONS from Azure Blob Storage">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="164,41.6"
+          Id="Package\Load SUBSCRIPTIONS from Azure Blob Storage\Azure Blob Source"
+          TopLeft="318.4,76.8" />
+        <NodeLayout
+          Size="157.6,41.6"
+          Id="Package\Load SUBSCRIPTIONS from Azure Blob Storage\SUBSCRIPTIONS"
+          TopLeft="320.8,173.6" />
+        <EdgeLayout
+          Id="Package\Load SUBSCRIPTIONS from Azure Blob Storage.Paths[Output]"
+          TopLeft="400,118.4">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,55.2"
+              Start="0,0"
+              End="0,47.7">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.7" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load SUBSCRIPTIONS from Azure Blob Storage\Azure Blob Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load SUBSCRIPTIONS from Azure Blob Storage\SUBSCRIPTIONS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
