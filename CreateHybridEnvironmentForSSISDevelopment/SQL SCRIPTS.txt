@@ -8,27 +8,3 @@ CREATE TABLE dbo.SUBSCRIPTIONS (
 	[ZIP]			VARCHAR(50)
 )
 
--- create tis stored procedure to perform bulk insert of a 
--- pipe-delimited file
-
-CREATE PROCEDURE [dbo].[BulkInsertPipeDelimited]
-  @file NVARCHAR(250)
-, @table NVARCHAR(250)
-AS
-BEGIN
-	DECLARE @f NVARCHAR(250), @t NVARCHAR(250), @s NVARCHAR(MAX)
-
-	SET @f = @file
-
-	SET @s = N'BULK INSERT ' + @table + '
-				FROM ''' + @file + '''
-				WITH (
-					 FIELDTERMINATOR = ''|''
-					,ROWTERMINATOR = ''\n''
-					,FIRSTROW=2
-				)';
-
-	EXEC sp_executesql @s
-END
-
-END
