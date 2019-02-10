@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="AdventureWorksLT"
+  DTS:DTSID="{74C0608B-00B0-4A84-B39F-BA8E4AFE3E2E}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=payasyougobackoffice.database.windows.net;User ID=cloudadmin;Initial Catalog=AdventureWorksLT;Provider=SQLNCLI11.1;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAYbFZkGAXh02/WYfcJ5KuiAAAAAACAAAAAAAQZgAAAAEAACAAAABdVxlnP1Hf0GpOOq0Gc+OhLG+QEg1Tk/XeOd20PVvjPQAAAAAOgAAAAAIAACAAAAAjq/CTFO+Bs0Nt7rXPKCERhembvxgBEShRTN5gN+l+bYAAAADZXC+wqeVwdGyKyecG/L41UGVF/6yJjqPz6e1+PSx4uhOahPdy5KRpWItDlHTCZUdXg0uHjN85/LG+0OhN/htRjPBbPcfVng9G76HyxLsuD+dLlHQpmwGP7P+nKCc25oyQx7k0Znz8SHONv1smtLHEFRWPW+z87XY87tzmMgUCJEAAAAAM7pLDmwQgwXKoanDZCO19Fe7ft0Xzj04vCnUBu1M8ztGNiDrdEYEaTc6Yg/lwc+nNeMi8ezgm0dTK972NiHPc</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

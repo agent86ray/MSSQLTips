@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="STAGE_SUBSCRIPTIONS"
   DTS:PackageType="5"
-  DTS:VersionBuild="10"
-  DTS:VersionGUID="{5604853B-3406-4AD5-AD2D-072A4008824C}">
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{8F0D123C-26C7-4E07-9980-0C94A69AB3FB}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -524,14 +524,14 @@
         <NodeLayout
           Size="164,41.6"
           Id="Package\Load SUBSCRIPTIONS from Azure Blob Storage\Azure Blob Source"
-          TopLeft="318.4,76.8" />
+          TopLeft="179.542854778134,64.5647057107576" />
         <NodeLayout
           Size="157.6,41.6"
           Id="Package\Load SUBSCRIPTIONS from Azure Blob Storage\SUBSCRIPTIONS"
-          TopLeft="320.8,173.6" />
+          TopLeft="181.942854778134,161.364705710758" />
         <EdgeLayout
           Id="Package\Load SUBSCRIPTIONS from Azure Blob Storage.Paths[Output]"
-          TopLeft="400,118.4">
+          TopLeft="261.142854778134,106.164705710758">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"

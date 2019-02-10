@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="EXTRACT_SUBSCRIPTIONS"
   DTS:PackageType="5"
-  DTS:VersionBuild="1"
-  DTS:VersionGUID="{5084C26C-A546-4969-9A8A-F16F27BBA630}">
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{BD53AF49-4E80-40CE-A971-726E44115A85}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAYbFZkGAXh02/WYfcJ5KuiAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABBSuMUB9lS/hnVEPUSOWDZc/TYgMnE+E6Jp2lqCsTAnwAAAAAOgAAAAAIAACAAAADrfYu2WIFoyEf1Ik5BpIpEQWxvVnAEyc1ZKwukY1FZLCAAAACPfnfxAMX5OfSdpUSuKQSIq+BS22iLCEInuQQ3ssOcYkAAAABiCKiSIfBd9SSCjgRTGlhaNm3RShMJzUlHPnIBr9m+xZFaOGetlMdYNuUwDjF4KHpr2/p2YG2GcBOgY650zBt3</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAYbFZkGAXh02/WYfcJ5KuiAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADkvW79bu/ST9uuZUied33ygOlCdiimlswdz7HjH7sjYAAAAAAOgAAAAAIAACAAAACajo6LHvaeCNOznJA8O/BUeMu0+ZM+FgK7V7ndC7MLLSAAAACAsrQrZvveea8B2NauQX0UUYLGF4hvw/PfBv60Yxsd6kAAAADKTDZAcnnWtFuvXpRTTT10d2yN94+BP+IfvjDszVNbEGUUSi40A02IzYwCH5cr4x7RV8v126iHafgmOcx/M2NW</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -457,25 +457,25 @@ WHERE
         <NodeLayout
           Size="140.8,41.6"
           Id="Package\Data Flow Task\Subscriptions"
-          TopLeft="212.000003610339,64.2352950185228" />
+          TopLeft="212.000003610339,67.2941185908334" />
         <NodeLayout
           Size="184.8,41.6"
           Id="Package\Data Flow Task\Azure Blob Destination"
           TopLeft="193.14286043206,153.552943329993" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
-          TopLeft="283.9714320212,105.835295018523">
+          TopLeft="283.9714320212,108.894118590833">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,47.7176483114698"
+              EndConnector="0,44.6588247391596"
               Start="0,0"
-              End="0,40.2176483114698">
+              End="0,37.1588247391596">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,40.2176483114698" />
+                    End="0,37.1588247391596" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -488,7 +488,7 @@ WHERE
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Subscriptions">
+    design-time-name="Package\Data Flow Task\Azure Blob Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -496,7 +496,7 @@ WHERE
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Azure Blob Destination">
+    design-time-name="Package\Data Flow Task\Subscriptions">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

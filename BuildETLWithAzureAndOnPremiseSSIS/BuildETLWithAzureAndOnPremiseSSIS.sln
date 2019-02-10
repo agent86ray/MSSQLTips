@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2050
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "BuildETLWithAzureAndOnPremiseSSIS", "BuildETLWithAzureAndOnPremiseSSIS\BuildETLWithAzureAndOnPremiseSSIS.dtproj", "{32991426-42E1-48C8-A0E5-4797F5E2DC40}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{32991426-42E1-48C8-A0E5-4797F5E2DC40}.Development|Default.ActiveCfg = Development
+		{32991426-42E1-48C8-A0E5-4797F5E2DC40}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0026AF4C-067D-42C6-B1E7-3B19D1B64820}
+	EndGlobalSection
+EndGlobal
